@@ -6,7 +6,7 @@ export type Tfield = {
 
 export type Tsection = {
   sectionId: string;
-  sectionValue: field[];
+  sectionValue: Tfield[];
 };
 
 export type TComplete = {

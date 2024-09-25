@@ -3,14 +3,14 @@ import { TComplete, Tsection } from "../types/ui";
 import Section from "./section";
 
 type Tprops = {
-  setPage: (page: Array<TComplete>) => void;
+  setPage: React.Dispatch<React.SetStateAction<TComplete[]>>;
 };
 
 const Left = ({ setPage }: Tprops) => {
   const [sectionsCollection, setSectionCollection] = useState<Tsection[]>([]);
   useEffect(() => {
     console.log(sectionsCollection);
-    setPage((prev) => {
+    setPage((prev: TComplete[]) => {
       const newSection = {
         pageHeading: "",
         pageNumber: "2",

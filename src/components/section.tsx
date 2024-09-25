@@ -5,7 +5,7 @@ import { Tsection } from "../types/ui";
 type sectionProps = {
   sectionId: number;
   section: Tsection;
-  setSectionCollection: (sectionCollection: Array<Tsection>) => void;
+  setSectionCollection: React.Dispatch<React.SetStateAction<Tsection[]>>;
 };
 
 const Section = ({ sectionId, setSectionCollection }: sectionProps) => {
@@ -14,7 +14,7 @@ const Section = ({ sectionId, setSectionCollection }: sectionProps) => {
   const [content, setContent] = useState("");
 
   const handleSubmit = () => {
-    setSectionCollection((prev) => {
+    setSectionCollection((prev: Tsection[]) => {
       const newSection = {
         sectionId: sectionId.toString(),
         sectionValue: [

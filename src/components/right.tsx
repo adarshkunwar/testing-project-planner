@@ -1,4 +1,5 @@
 import { renderer } from "../lib/renderer";
+import { helper } from "../types/renderer";
 import { TComplete, Tfield, Tsection } from "../types/ui";
 
 type TRight = {
@@ -16,9 +17,10 @@ const Right = ({ page }: TRight) => {
               <div key={data.sectionId}>
                 <h3>{data.sectionId}</h3>
                 {data.sectionValue.map((field: Tfield, fieldIndex) => {
-                  const values = {
+                  const values: helper = {
                     content: field.content,
-                    typeOfContent: field.type,
+                    typeOfContent:
+                      field.type === "heading" ? "heading" : "text",
                     // Assuming you want to set headingType dynamically based on the field type
                     styling: [],
                     headingType: field.type === "heading" ? "h1" : undefined,

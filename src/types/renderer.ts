@@ -4,6 +4,7 @@ type styles = {
   attribute: string;
   value: string;
 };
+
 export type helper = {
   content: string;
   styling: styles[];
