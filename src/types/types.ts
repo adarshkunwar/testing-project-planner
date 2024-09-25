@@ -12,7 +12,7 @@ export type option = {
   value: string;
 };
 
-export type inputBox = {
+export type inputBoxProps = {
   name: string;
   width: width;
   label: string;
@@ -20,10 +20,12 @@ export type inputBox = {
   setValue: (value: string) => void;
 } & (
   | {
-      type: Omit<type, "select" | "radio">;
+      type: Exclude<type, "select" | "radio">;
     }
   | {
-      type: Omit<type, "text" | "file">;
+      type: Exclude<type, "text" | "file">;
       option: option[];
     }
 );
+
+export type inputBox = (props: inputBoxProps) => JSX.Element;

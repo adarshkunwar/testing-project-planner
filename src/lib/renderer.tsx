@@ -9,5 +9,8 @@ export const renderer = (helper: helper): JSX.Element => {
 
     return <HeadingTag>{helper.content}</HeadingTag>;
   }
+  if (helper.typeOfContent === "paragraph") {
+    return <p>{helper.content}</p>;
+  }
   return <></>;
 };

@@ -30,3 +30,17 @@ test("Simple heading without any styling, h3", () => {
     </h3>
   `);
 });
+
+test("Simple paragraph without any styling ", () => {
+  expect(
+    renderer({
+      content: "Hello",
+      styling: [],
+      typeOfContent: "paragraph",
+    }),
+  ).toMatchInlineSnapshot(`
+    <p>
+      Hello
+    </p>
+  `);
+});
