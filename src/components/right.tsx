@@ -20,10 +20,9 @@ const Right = ({ page }: TRight) => {
                   const values: helper = {
                     content: field.content,
                     typeOfContent:
-                      field.type === "heading" ? "heading" : "text",
-                    // Assuming you want to set headingType dynamically based on the field type
+                      field.type === "heading" ? "heading" : "paragraph",
                     styling: [],
-                    headingType: field.type === "heading" ? "h1" : undefined,
+                    headingType: field.type === "heading" ? "h1" : "h2",
                   };
                   return <div key={fieldIndex}>{renderer(values)}</div>;
                 })}
