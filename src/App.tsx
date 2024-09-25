@@ -1,4 +1,3 @@
-import "./App.css";
 import Left from "./components/left";
 import Right from "./components/right";
 
