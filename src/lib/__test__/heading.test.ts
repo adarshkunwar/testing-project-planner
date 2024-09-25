@@ -1,9 +1,32 @@
-export function sum(a: number, b: number) {
-  return a + b;
-}
-// sum.test.js
 import { expect, test } from "vitest";
+import { renderer } from "../renderer";
 
-test("adds 1 + 2 to equal 3", () => {
-  expect(sum(1, 2)).toBe(3);
+test("Simple heading without any styling, h1", () => {
+  expect(
+    renderer({
+      content: "Hello",
+      styling: [],
+      typeOfContent: "heading",
+      headingType: "h1",
+    }),
+  ).toMatchInlineSnapshot(`
+    <h1>
+      Hello
+    </h1>
+  `);
+});
+
+test("Simple heading without any styling, h3", () => {
+  expect(
+    renderer({
+      content: "Hello",
+      styling: [],
+      typeOfContent: "heading",
+      headingType: "h3",
+    }),
+  ).toMatchInlineSnapshot(`
+    <h3>
+      Hello
+    </h3>
+  `);
 });
