@@ -7,7 +7,7 @@ export const renderer = (helper: helper): JSX.Element => {
     // TypeScript knows that headingType exists here
     const HeadingTag = helper.headingType; // Extract the tag dynamically
 
-    return <HeadingTag>{helper.content}</HeadingTag>;
+    return <HeadingTag className="text-2xl">{helper.content}</HeadingTag>;
   }
   if (helper.typeOfContent === "paragraph") {
     return <p>{helper.content}</p>;

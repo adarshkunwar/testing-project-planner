@@ -2,6 +2,7 @@ import { useState } from "react";
 import Left from "./components/left";
 import Right from "./components/right";
 import { TComplete } from "./types/ui";
+import "./App.css";
 
 function App() {
   const [page, setPage] = useState<TComplete[]>([]);
